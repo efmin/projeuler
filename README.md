@@ -1,2 +1,2 @@
 # projeuler
-algorithmn practice from 
+algorithmn practice from https://projecteuler.net/
