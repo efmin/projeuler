@@ -42,10 +42,36 @@ def fibonacci(n)
   n < 2 ? n : fibonacci(n-1) + fibonacci(n-2)
 end
 
-arr = []
-for i in 1..1000
-  if fibonacci(i).even?
-    arr << fibonacci(i)
-  end
+#
+# Note: I just re-read the question and realized that I misunderstood the phrase
+# "By considering the terms in the Fibonacci sequence whose values do not exceed four million".
+# I assumed it delimited an upper limit to the Fib number itself but it specifies "values"
+# and so it means the OUTPUT of the fibonacci sequence and not the INPUT as I originally
+# interpreted.
+
+# The method above is too slow because it calls recursion twice, creating
+# a huge and unnecessary tree whereas the one below calls it once.
+#
+
+def fib_resursion(a, b, n)
+  n == 0 ? a : fib_resursion(b, a + b, n - 1)
 end
-puts sum = arr.sum
+
+def fib_find_num_at(n)
+  fib_r(0, 1, n)
+end
+
+
+
+
+
+
+# even = []
+# (0..40).each do |n|
+#   if fib(n).even?
+#   even << fib(n)
+#   end
+# end
+#
+# p even
+# p even.sum
