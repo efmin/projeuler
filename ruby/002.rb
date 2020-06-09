@@ -27,9 +27,9 @@
 # array for even-valued terms
 # integer as sum result
 # #
-# # Illustrate:
-# I need to write the fib method to find all terms up to 4*10**6
-# then collect and sum all the even terms
+# # # Illustrate:
+# I need a method that limits the fib values as under 4 million, then
+# I need to collect all the even values and return the sum.
 #
 # # Methods:
 #
@@ -37,31 +37,49 @@
 # do i include 4*6**10? I think so.
 
 #
-# this method is too slow:
-def fibonacci(n)
-  n < 2 ? n : fibonacci(n-1) + fibonacci(n-2)
+# # this method is too slow:
+# def fibonacci(n)
+#   n < 2 ? n : fibonacci(n-1) + fibonacci(n-2)
+# end
+
+# The method above is too slow because it calls recursion twice, creating
+# a huge and unnecessary tree whereas the one below calls it once.
+#
+#
+# def fib_resursion(a, b, n)
+#   n == 0 ? a : fib_resursion(b, a + b, n - 1)
+# end
+#
+# def fib_find_num_at(n)
+#   fib_r(0, 1, n)
+# end
+#
+#  1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233
+
+def even_fib_sum(lim)
+  fib1 = 2
+  fib2 = 8
+  even = []
+  even << fib1 << fib2
+  until find_fib3(fib1, fib2) == lim
+    even <find_fib3(fib1, fib2)
+
 end
 
-#
+even_fib_sum(10)
+
+def find_fib3(a,b)
+  fib3 = a + b*4
+end
+
 # Note: I just re-read the question and realized that I misunderstood the phrase
 # "By considering the terms in the Fibonacci sequence whose values do not exceed four million".
 # I assumed it delimited an upper limit to the Fib number itself but it specifies "values"
 # and so it means the OUTPUT of the fibonacci sequence and not the INPUT as I originally
 # interpreted.
 
-# The method above is too slow because it calls recursion twice, creating
-# a huge and unnecessary tree whereas the one below calls it once.
-#
-
-def fib_resursion(a, b, n)
-  n == 0 ? a : fib_resursion(b, a + b, n - 1)
-end
-
-def fib_find_num_at(n)
-  fib_r(0, 1, n)
-end
-
-
+# I need a method that limits the fib values as under 4 million, then
+# I need to collect all the even values and return the sum.
 
 
 
