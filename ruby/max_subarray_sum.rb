@@ -41,7 +41,6 @@ Return the max sum once done.
 
 methods
 
-
 exeptions/edge cases
 - if it's all positive numbers then max sum is entire array
 - all negative numbers or empty list, return 0
