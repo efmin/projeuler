@@ -33,13 +33,21 @@ data structures
 - array?
 
 illustration
-I need a method that adds the first two integers to create the first max sum. Then
-I need to add the following integer and check if the sum has increased. If it has, I
-replace the max sum with the new sum. Then I continue to add integers. If it has not
-increased, then I restart the whole process using the second and third integer as my base.
-Return the max sum once done.
+I need a way to track:
+- the greatest_sum_thusfar
+- array_index
+
+Then I need a method that:
+- finds the first positive integer
+- sets the greatest_sum_thusfar to the first positive integer value
+- adds the next integer and checks if the sum is greater than greatest_sum_thusfar
+- if it is greater, set new sum to greatest_sum_thusfar
+- if it is not greater, continue to next integer
+- return greatest sum once I have finished iterating through entire array
 
 methods
+- [].inject(:+) to sum
+- for i..
 
 exeptions/edge cases
 - if it's all positive numbers then max sum is entire array

@@ -1,4 +1,4 @@
-# This time no story, no theory. The examples below show you how to write function accum:
+
 
 # Examples:
 
@@ -24,6 +24,36 @@
 # I need a method that takes the input string and for each letter, multiply itself by its index + 1 then capitalize. If I do this by calling .split("") before the block actions, I am currently working with an array and not a string. 
 #
 # Methods:
+#
+# each_with_index method will allow me to access each letter's index # so that I can multiple the letter by its index + 1
+#
+# join("") will allow me to join the array back into a string
+#
 # Examples/Exceptions:
-#
-#
+# N/A
+
+
+# def accum(s)
+# take my string and call split method to make it into an array of letters
+  
+# iterate through array and apply block to transform string character into "mumbled" version of itself
+
+# join the array string items together with join method using a "-" as separator
+# end
+
+def accum(s)
+  result = []
+  s.split("").each_with_index do |str, i| 
+    result << (str*(i+1)).capitalize
+  end
+  result.join("-")
+end
+
+
+
+p accum("abcd")
+p accum("abcd") == "A-Bb-Ccc-Dddd"
+p accum("LOLLZ")
+p accum("LOLLZ") == "L-Oo-Lll-Llll-Zzzzz"
+p accum("EffY")
+p accum("EffY") == "E-Ff-Fff-Yyyy"
